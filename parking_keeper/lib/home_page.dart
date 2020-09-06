@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parking_keeper/fragment/home_fragment.dart';
 import 'package:parking_keeper/fragment/profile_fragment.dart';
+import 'package:parking_keeper/scan_qrcode_page.dart';
 import 'package:parking_keeper/widgets/drawer_home.dart';
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Trang chủ'),
       routes: {
-        // '/ProfilePages': (context) => Profile(),
+        '/ScanQRCodePages': (context) => ScanQRCode(),
       },
     );
   }
@@ -54,7 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
           child: FloatingActionButton(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, ScanQRCode.routeName);
+            },
             child: Container(
               height: 70,
               width: 70,
